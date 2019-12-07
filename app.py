@@ -31,7 +31,7 @@ def find_product(filter_key: str, filter_val: str) -> str:
     if filter_key != 'name':
         return make_response(jsonify({'error': 'Unsupported filter'}), 400)
 
-    products = list(service.find_products(name=filter_val))
+    products = list(service.find_products(ingredient_name=filter_val))
     return not_found('Product not found') if len(products) == 0 else get_response('products', products)
 
 
