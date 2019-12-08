@@ -37,7 +37,6 @@ class TestProducts(unittest.TestCase):
                 1
             ]
         })
-        service._create_name_lookup()
 
 
 if __name__ == '__main__':

@@ -27,6 +27,7 @@ class SmoothieService:
         """
         product = Product(**product_json)
         self.products[product.id] = product
+        self._update_name_lookup({product.id: product})
         return [product]
 
     def add_ingredient(self, ingredient_json: Dict[str, Any]) -> List[Entity]:
@@ -64,15 +65,15 @@ class SmoothieService:
                 self.ingredients[ingredient_dict['id']] = Ingredient(**ingredient_dict)
 
         print(f'Loaded {len(self.products)} products and {len(self.ingredients)} ingredients...')
-        self._create_name_lookup()
+        self._update_name_lookup(self.products)
 
-    def _create_name_lookup(self) -> None:
+    def _update_name_lookup(self, product_dict: Dict[int, Product]) -> None:
         """
         Convenience method that creates a dictionary of products keyed by ingredient names, which ensures O(1) lookup
         for all product searches by ingredient name.
         :return: None
         """
-        for product in self.products.values():
+        for product in product_dict.values():
             for ingredient_id in product.ingredient_ids:
                 ingredient = self.ingredients[ingredient_id]
                 product_set = self.ingredient_name_product_dict.get(ingredient.name, set())
