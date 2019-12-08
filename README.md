@@ -9,13 +9,13 @@ add a product to the service (which is held in memory only).
 
 Another small feature is the ability to find products by filtering on the ingredient name:
 ```commandline
-> curl http://localhost:5000/api/v1/products/filter.name=Organic%20Banana
+> curl http://localhost:5000/api/v1/products/filter.ingredient-name=Organic%20Banana
 ``` 
-To lookup is done in constant time, i.e. `O(1)`, by pre-constructing a map of ingredients containing sets of products.  
+The lookup is done in constant time, i.e. `O(1)`, by pre-constructing a map of ingredients containing sets of products.  
   
 
 #### Installing and Starting
-These commands assume that you have installed Python 3.5+ and pip and that you are running on Windows:
+These commands assume have installed Python 3.5+ and pip running on Windows:
 
 ```commandline
 > python -m pip install --user virtualenv
@@ -39,7 +39,7 @@ To create a new smoothie (note that there is no POST end-point for ingredient cr
 ```commandline
 > curl -d "{\"id\":7,\"name\":\"Foo + Bar\",\"collection\": \"funky\",\"ingredient_ids\":[1,2,3]}" -H "Content-Type: application/json" http://localhost:5000/api/v1/products
 ```
-**Important**: The content type is required in the header: `"Content-Type: application/json`.  For better readability, the body of the payload is:
+**Important**: The content type is required in the header: `"Content-Type: application/json`.  For better readability, the body of the example payload is:
 ```json
 {
     "id": 7,
@@ -58,7 +58,7 @@ You can confirm that the new smoothie got added to the service by using GET verb
 ```
 * Find Products by Ingredient Name
 ```commandline
-> curl http://localhost:5000/api/v1/products/filter.name=Organic%20Banana
+> curl http://localhost:5000/api/v1/products/filter.ingredient-name=Organic%20Banana
 ``` 
 * Find Ingredients (all and by ID)
 ```commandline

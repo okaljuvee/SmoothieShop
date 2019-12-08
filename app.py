@@ -28,7 +28,7 @@ def get_product(product_id: int) -> str:
 
 @app.route('/api/v1/products/filter.<string:filter_key>=<string:filter_val>', methods=['GET'])
 def find_product(filter_key: str, filter_val: str) -> str:
-    if filter_key != 'name':
+    if filter_key != 'ingredient-name':
         return make_response(jsonify({'error': 'Unsupported filter'}), 400)
 
     products = list(service.find_products(ingredient_name=filter_val))
