@@ -24,7 +24,7 @@ These commands assume have installed Python 3.5+ and pip running on Windows:
 > python -m venv venv
 > .\venv\Scripts\activate
 (venv) > pip install -r requirements.txt
-> python app.py
+(venv) > python app.py
 ```
 **Important**: Do not use `flask run` command because it will not call the main entry point of `app.py` which does some required bootstrapping for the application.
 #### Running
