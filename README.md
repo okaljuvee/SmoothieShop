@@ -15,7 +15,7 @@ The lookup is done in constant time, i.e. `O(1)`, by pre-constructing a map of i
   
 
 #### Installing and Starting
-These commands assume have installed Python 3.6+ (because the use of f-strings) and pip running on Windows:
+These commands assume have installed **Python 3.6+** (because the use of f-strings) and pip running on Windows:
 
 ```commandline
 > python -m pip install --user virtualenv
