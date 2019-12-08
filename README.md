@@ -65,3 +65,8 @@ You can confirm that the new smoothie got added to the service by using GET verb
 > curl http://localhost:5000/api/v1/ingredients
 > curl http://localhost:5000/api/v1/ingredients/3
 ```
+### Tests
+There is a single test for testing the lookup by ingredient:
+```commandline
+(venv) > python -m unittest test.product
+```
