@@ -63,6 +63,7 @@ class SmoothieService:
             for ingredient_dict in json.load(json_file)['ingredients']:
                 self.ingredients[ingredient_dict['id']] = Ingredient(**ingredient_dict)
 
+        print(f'Loaded {len(self.products)} products and {len(self.ingredients)} ingredients...')
         self._create_name_lookup()
 
     def _create_name_lookup(self) -> None:
