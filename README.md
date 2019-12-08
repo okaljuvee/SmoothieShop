@@ -39,7 +39,7 @@ To create a new smoothie (note that there is no POST end-point for ingredient cr
 ```commandline
 > curl -d "{\"id\":7,\"name\":\"Foo + Bar\",\"collection\": \"funky\",\"ingredient_ids\":[1,2,3]}" -H "Content-Type: application/json" http://localhost:5000/api/v1/products
 ```
-**Important**: The content type is required in the header: `"Content-Type: application/json`.  For better readability, the body of the example payload is:
+**Important**: The content type is required in the header: `"Content-Type: application/json"`.  For better readability, the body of the example payload is:
 ```json
 {
     "id": 7,

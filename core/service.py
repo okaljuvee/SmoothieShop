@@ -43,7 +43,7 @@ class SmoothieService:
         """
         Find products that contain the ingredient by name
         :param ingredient_name: Ingredient name to be searched in product list
-        :return: Product set of products containing the ingredient, None otherwise
+        :return: Product set of products containing the ingredient, empty set otherwise
         """
         if ingredient_name in self.ingredient_name_product_dict:
             return self.ingredient_name_product_dict[ingredient_name]
